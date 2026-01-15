@@ -74,7 +74,7 @@ class MemorialGallery extends HTMLElement {
 
                     <div class="gallery-item">
                         <img src="/static/imgs/pic-4.jpeg" alt="Fishing">
-                        <div class="gallery-caption">Vacation in Kribi</div>
+                        <div class="gallery-caption">Man of God</div>
                     </div>
 
                     <div class="gallery-item">

@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <nav class="sticky top-0 z-50 py-4 px-6">
                     <div class="nav-container">
-                        <h1 class="text-3xl md:text-4xl ml-4">In Loving Memory</h1>
+                        <h1 class="text-3xl md:text-4xl ml-4">Forever in our hearts</h1>
 
                         <div>
                             <button class="share-btn" id="shareBtn">
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (navigator.share) {
                     navigator.share({
                         title: document.title,
-                        text: 'In loving memory',
+                        text: 'Forever in our hearts',
                         url: window.location.href
                     }).catch(() => {});
                 } else {
