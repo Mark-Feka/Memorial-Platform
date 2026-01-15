@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="relative py-20 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4 text-center">
+        <div class="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-white shadow-lg">
+            <img src="/static/imgs/profile.jpeg" class="w-full h-full object-cover">
+        </div>
+
+        <h1 class="text-4xl font-bold text-gray-800">Feka Christopher Njuakom</h1>
+        <p class="text-xl text-gray-600">1959 – 2026</p>
+
+        <!-- Share Buttons -->
+        <div class="flex justify-center mt-6 space-x-4">
+            <a href="#" class="bg-blue-100 p-3 rounded-full"><i data-feather="facebook"></i></a>
+            <a href="#" class="bg-green-100 p-3 rounded-full"><i data-feather="twitter"></i></a>
+            <a href="#" class="bg-red-100 p-3 rounded-full"><i data-feather="mail"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section class="py-16 bg-white">
+    <memorial-gallery></memorial-gallery>
+</section>
+
+    <!-- Biography Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Life & Legacy</h2>
+        <div class="prose prose-lg text-gray-700 mx-auto">
+            <p>Christopher was born on 1st January 1959 in Molyko, Buea, to Mr. Stephen Nyahchong Feka and Mrs. Mary Futella Feka. He was the youngest of five children.</p>
+            
+            <p>He began his primary education at St. Andrew’s Primary School, Muea, Buea, before continuing at St. Herman’s Primary School, Ekona, where he obtained his First School Leaving Certificate. His secondary education commenced at St. Bede’s College, Ashing-Kom, and he completed his high school education at CPC Bali. He later pursued higher education at the University of Yaoundé (Ngoa-Ekellé), earning a Bachelor’s degree in Law. He earned a Postgraduate Diploma in Public Management from the University of Birmingham, United Kingdom, and a Postgraduate Diploma in Human Resources Management from the Galilee Institute of Public Management. He further distinguished himself by obtaining a Master’s degree in Human Resources Management from Southern University of Delaware, USA.</p>
+            
+            <p>He entered into a blessed union with Dr. Stella Anumbundem Feka, and together they were graced with three children.</p>
+            
+            <p>Christopher devoted himself to the public service, beginning his career at the Ministry of Lands and Town Planning as Assistant Chief of Personnel. His outstanding capabilities led to his transfer to the Ministry of Environment and Forestry (MINEF), where he was appointed Chief of Personnel. With the creation of the Ministry of Environment, Nature Protection, and Sustainable Development (MINEPDED), he continued his exemplary service as Sub-Director, a position he held until his retirement. Within the ministry, he also led the SIGIPES Unit, overseeing the management of personnel and payroll systems for the civil service, demonstrating both technical expertise and steadfast leadership. Even after retirement, he continued to share his expertise as a consultant in Human Resources and Environmental Governance with APME, contributing meaningfully to the development of public sector human resource practices and environmental policy frameworks.</p>
+
+            <p>Beyond his professional achievements, Christopher was deeply committed to the Church and his community. In 2021, he was elected Diocesan President of the Catholic Men Association (CMA), reflecting his dedication to faith, moral leadership, and service. He also actively engaged with alumni associations, serving as Branch President and subsequently National President of SABESA, and as Coordinator of BOBANS, demonstrating a lifelong commitment to mentorship, education, and community development.</p>
+            
+            <p class="italic">Christopher’s life was characterized by integrity, devotion, and a profound sense of responsibility to both family and society. He was a man whose faith, scholarship, and professional excellence inspired those around him. His legacy is reflected not only in his professional contributions but also in the lives of the family, colleagues, and communities he touched with his wisdom, guidance, and compassion.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Eulogy Section -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">
+            Share Your Memories
+        </h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            We invite you to share your stories, photos, and reflections to honor John's memory.
+        </p>
+
+        <!-- Eulogy Form -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-16">
+        <form method="POST" action="{{ url_for('submit_eulogy') }}" enctype="multipart/form-data" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <input name="name" type="text" required placeholder="Your Name" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <input name="relationship" required placeholder="Relationship" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <input name="email" type="email" placeholder="Email" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <input name="number" placeholder="Phone Number" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+            </div>
+
+            <div>
+                <textarea name="message" required rows="6" placeholder="Your Tribute" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+            <div>
+                <label for="photos" class="block text-gray-700 mb-2">Upload Photos (Optional, max 5)</label>
+                <input type="file" id="photos" name="photos" class="w-full" multiple accept=".jpg, .jpeg, .png, image/jpeg, image/png">
+                <button type="button" id="addPhotosBtn" class="mb-3 px-4 py-2 bg-[#4a6fa5] rounded hover:bg-blue-700 text-white">
+                    Add Photos
+                </button>
+                <div id="preview-container" class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4"></div>
+                <p class="text-sm text-gray-500 mt-1">
+                    Please upload respectful and relevant images. Max file size: 5MB each.
+                </p>
+            </div>
+
+            <div class="flex items-start">
+                <input type="checkbox" id="consent" required class="mt-1 mr-2">
+                <label for="consent" class="text-gray-700">I confirm this message is respectful and truthful.</label>
+            </div>
+
+            <button type="submit" class="w-full bg-[#4a6fa5] hover:bg-blue-700 text-white py-3 px-6 rounded-md transition duration-300">
+                Submit Tribute
+            </button>
+        </form>
+        </div>
+
+
+        <!-- Eulogies -->
+        <h3 class="text-2xl font-bold text-gray-800 mb-8">Memories Shared</h3>
+        <div class="mt-16 space-y-8">
+            {% for e in eulogies %}
+                <custom-eulogy-card
+                    name="{{ e.name }}"
+                    relationship="{{ e.relationship }}"
+                    date="{{ e.date }}"
+                    message="{{ e.message }}"
+                    photos='{{ e.photos | list | tojson }}'
+                    votes="{{ e.votes }}">
+                </custom-eulogy-card>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
