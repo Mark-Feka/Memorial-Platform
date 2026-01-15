@@ -3,3 +3,4 @@ Flask-Session
 pytailwindcss
 requests
 Werkzeug
+gunicorn
