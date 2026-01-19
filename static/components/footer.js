@@ -22,7 +22,7 @@ class CustomFooter extends HTMLElement {
                             Thank You for Honoring His Memory
                         </h3>
                         <p class="text-gray-600 max-w-2xl mx-auto">
-                            Your stories and memories help keep John's spirit alive for generations to come.
+                            Your stories and memories help keep Feka Christopher's spirit alive for generations to come.
                         </p>
                     </div>
 
@@ -42,8 +42,8 @@ class CustomFooter extends HTMLElement {
                     </div>
 
                     <div class="text-center text-gray-500 text-sm">
-                        <p>Created with love by the Anderson family</p>
-                        <p class="mt-2">© 2023 In Loving Memory</p>
+                        <p>Created with love by the Feka family</p>
+                        <p class="mt-2">© 2023 In Loving Memory Bobe Njuakom</p>
                     </div>
                 </div>
             </footer>
